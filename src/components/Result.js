@@ -44,10 +44,6 @@ function Result({season, seasonImage, restartQuiz }) {
           <a href="https://instagram.com/BenBeyond_/" target="_blank" rel="noopener noreferrer">Presented by </a>
           <a href="https://instagram.com/BenBeyond_/" target="_blank" rel="noopener noreferrer" className="underline">@BenBeyond</a>
         </div>
-
-        <div className="reference">
-          <a href="#" target="_blank" rel="noopener noreferrer">References from ...</a>
-        </div>
       </div>
 
       <button className='quizAgain' onClick={restartQuiz}>ทำแบบทดสอบอีกรอบ &gt;</button>

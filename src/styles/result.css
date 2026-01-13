@@ -205,30 +205,6 @@
     text-decoration: underline;
 }
 
-.reference {
-    /* margin-bottom: 1vw; */
-    font-family: "Macchiato", sans-serif;
-    font-size: 0.65rem;
-    color: #172A3A;
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding-top: calc(100vw * 0.01);
-    padding-bottom: calc(100vw * 0.01);
-}
-
-.reference a {
-    color: #172A3A;
-    text-decoration: none;
-}
-
-.reference a.underline {
-    color: #172A3A;
-    text-decoration: underline;
-}
-
 .benlogo {
     height: 15vh;
     width: 15vh;
