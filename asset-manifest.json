@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/BenBeyond/static/css/main.2b2cd565.css",
+    "main.css": "/BenBeyond/static/css/main.573f8509.css",
     "main.js": "/BenBeyond/static/js/main.f97dcc5d.js",
     "static/js/453.4d0f6582.chunk.js": "/BenBeyond/static/js/453.4d0f6582.chunk.js",
     "static/media/Autumn.png": "/BenBeyond/static/media/Autumn.fb8d65c2908c22f0772c.png",
@@ -21,12 +21,12 @@
     "static/media/4.png": "/BenBeyond/static/media/4.2ccb5c44ce0c553d0415.png",
     "static/media/Itim Regular.otf": "/BenBeyond/static/media/Itim Regular.35998607cd9ea5943e47.otf",
     "index.html": "/BenBeyond/index.html",
-    "main.2b2cd565.css.map": "/BenBeyond/static/css/main.2b2cd565.css.map",
+    "main.573f8509.css.map": "/BenBeyond/static/css/main.573f8509.css.map",
     "main.f97dcc5d.js.map": "/BenBeyond/static/js/main.f97dcc5d.js.map",
     "453.4d0f6582.chunk.js.map": "/BenBeyond/static/js/453.4d0f6582.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b2cd565.css",
+    "static/css/main.573f8509.css",
     "static/js/main.f97dcc5d.js"
   ]
 }
