@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/benbeyond/static/css/main.5cfdcf26.css",
+    "main.js": "/benbeyond/static/js/main.dfde7c70.js",
+    "static/js/453.b9871dec.chunk.js": "/benbeyond/static/js/453.b9871dec.chunk.js",
+    "static/media/Autumn.png": "/benbeyond/static/media/Autumn.fb8d65c2908c22f0772c.png",
+    "static/media/Spring.png": "/benbeyond/static/media/Spring.8c926e3af10e26c565d4.png",
+    "static/media/Winter.png": "/benbeyond/static/media/Winter.22d8b1f3dedea696dc86.png",
+    "static/media/logo.png": "/benbeyond/static/media/logo.2fa508ed2e6e50ea191e.png",
+    "static/media/Summer.png": "/benbeyond/static/media/Summer.efd9b28cb5cb2c24df76.png",
+    "static/media/Itim Regular.otf": "/benbeyond/static/media/Itim Regular.35998607cd9ea5943e47.otf",
+    "static/media/char_holder.png": "/benbeyond/static/media/char_holder.2eaccd530ed02cf0d35f.png",
+    "index.html": "/benbeyond/index.html",
+    "main.5cfdcf26.css.map": "/benbeyond/static/css/main.5cfdcf26.css.map",
+    "main.dfde7c70.js.map": "/benbeyond/static/js/main.dfde7c70.js.map",
+    "453.b9871dec.chunk.js.map": "/benbeyond/static/js/453.b9871dec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5cfdcf26.css",
+    "static/js/main.dfde7c70.js"
+  ]
+}
