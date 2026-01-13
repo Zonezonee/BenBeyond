@@ -19,7 +19,7 @@ const App = () => {
       <div className="container">
         {showStartPage ? (
           <div className="start-page">
-            <img src={logo} alt="Benbeyond"/>
+            <img src={logo} alt="BenBeyond"/>
 
             <h1>What's your type of Seasons</h1>
             <h1>ฤดูของคุณคืออะไร</h1>

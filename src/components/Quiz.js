@@ -288,7 +288,7 @@ function Quiz({backToStart}) {
       >
         ต่อไป &gt;
       </button>
-      <a href="https://instagram.com/benbeyond_/"><img src={logo} alt="Benbeyond" className="logo"/></a>
+      <a href="https://instagram.com/BenBeyond_/"><img src={logo} alt="BenBeyond" className="logo"/></a>
     </div>
 );
 }

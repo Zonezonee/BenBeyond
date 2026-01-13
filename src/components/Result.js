@@ -41,8 +41,8 @@ function Result({season, seasonImage, restartQuiz }) {
           </div>
         </div> */}
         <div className="credit">
-          <a href="https://instagram.com/benbeyond_/" target="_blank" rel="noopener noreferrer">Presented by </a>
-          <a href="https://instagram.com/benbeyond_/" target="_blank" rel="noopener noreferrer" className="underline">@BenBeyond</a>
+          <a href="https://instagram.com/BenBeyond_/" target="_blank" rel="noopener noreferrer">Presented by </a>
+          <a href="https://instagram.com/BenBeyond_/" target="_blank" rel="noopener noreferrer" className="underline">@BenBeyond</a>
         </div>
 
         <div className="reference">
