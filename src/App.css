@@ -1,17 +1,24 @@
+@font-face {
+  font-family: "Macchiato";
+  src: url('fonts/Itim\ Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .center-layout {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ECF8FE;
+  background-color: #ebdff0;
   overflow-y: auto;
 }
 
 .container {
   width: 100vw;
-  height: calc(100vw * (19.5 / 9));
+  height: calc(100vw * (16 / 9));
   max-height: 100vh;
-  max-width: calc(100vh * (9 / 19.5));
+  max-width: calc(100vh * (9 / 16));
 
   padding-left: calc(100vw * 0.05);
   padding-right: calc(100vw * 0.05);
@@ -21,7 +28,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  background-color: #ECF8FE;
+  background-color: #ebdff0;
 }
 
 .start-page {
@@ -50,12 +57,14 @@
   font-style: normal;
 }
 
-img {
-  max-height: 20vh;
+.start-page img {
+  height: 20vh;
+  width: 20vh;
+  object-fit: cover;
 }
 
 h1 {
-  font-family: "Darumadrop One", sans-serif;
+  font-family: "Macchiato", sans-serif;
   font-weight: 400;
   color:#172A3A;
   text-align: center;
@@ -63,21 +72,21 @@ h1 {
 }
 
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Macchiato", sans-serif;
   color:#172A3A;
   text-align: center;
   font-size: 1rem;
 }
 
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Macchiato", sans-serif;
   color: #ECF8FE;
   background-color: #172A3A;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   margin-top: 20px;
   width: 100%;
 }

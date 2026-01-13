@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Quiz from "./components/Quiz";
-import theCabin from './images/the-cabin.png';
+import logo from './images/logo.png';
 import "./App.css"
 
 const App = () => {
@@ -10,23 +10,25 @@ const App = () => {
     setShowStartPage(false);
   };
 
+  const handleToStart = () => {
+    setShowStartPage(true);
+  };
+
   return (
     <div className="center-layout">
       <div className="container">
         {showStartPage ? (
           <div className="start-page">
-            <img src={theCabin} alt="The Cozy Cabin Cafe"/>
+            <img src={logo} alt="Benbeyond"/>
 
-            <h1>Welcome to the Cozy Cabin Cafe!</h1>
+            <h1>What's your type of Seasons</h1>
+            <h1>ฤดูของคุณคืออะไร</h1>
             
-            <p>
-              Season’s greetings, winter traveler!
-              Sit back and relax while we brew something special for you!
-            </p>
-            <button onClick={handleStartQuiz}>Start Quiz</button>
+            <p>มาเริ่มทำความรู้จักตัวเองให้มากขึ้นไปด้วยกันน ~</p>
+            <button onClick={handleStartQuiz}>ไปกันเลย!!!</button>
           </div>
         ) : (
-          <Quiz />
+          <Quiz backToStart={handleToStart}/>
         )}
       </div>
     </div>

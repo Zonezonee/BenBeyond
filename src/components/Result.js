@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/result.css"
+import logo from "../images/logo.png"
+function Result({season, seasonImage, restartQuiz }) {
+  const imageRef = useRef(null);
 
-function Result({ drink, compatible, description, drinkImage, compatibleImage, restartQuiz }) {
+  const saveImage = () => {
+    if (imageRef.current) {
+      const link = document.createElement('a');
+      link.href = imageRef.current.src;
+      link.download = `${season}-result.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <div className='borderedArea'>
       <div className="resultContainer">
         <div className='resultHeader'>
-          <h3>⋆˙𐙚 Your Special Drink ❅˙⋆</h3>
-        </div>
-        
-        <div className='resultDrink'>
-          <h1>{drink}</h1>
-            <img src={drinkImage} alt={drink} />
-            <p>{description}</p>
+          <h3>Your Type</h3>
         </div>
 
-        <div className='resultPair'>
+        <div className='resultSeason'>
+          <img src={seasonImage} alt={season} ref={imageRef} />
+          <button className='saveImageBtn' onClick={saveImage} title="Save image">
+            
+          </button>
+        </div>
+
+        {/* <div className='resultPair'>
 
           <div className="pairLeft">
             <h4>Your perfect pair</h4>
@@ -25,11 +39,19 @@ function Result({ drink, compatible, description, drinkImage, compatibleImage, r
           <div className='pairRight'>
             <img src={compatibleImage} alt={compatible} />
           </div>
+        </div> */}
+        <div className="credit">
+          <a href="https://instagram.com/benbeyond_/" target="_blank" rel="noopener noreferrer">Presented by </a>
+          <a href="https://instagram.com/benbeyond_/" target="_blank" rel="noopener noreferrer" className="underline">@BenBeyond</a>
         </div>
-        <div className='attribution'><a href="https://instagram.com/notekating" target="_blank" rel="noopener noreferrer">Cozy Cabin Cafe Quiz by IG@notekating</a></div>
+
+        <div className="reference">
+          <a href="#" target="_blank" rel="noopener noreferrer">References from ...</a>
+        </div>
       </div>
-      
-      <button className='quizAgain' onClick={restartQuiz}>Take the Quiz Again &gt;</button>
+
+      <button className='quizAgain' onClick={restartQuiz}>ทำแบบทดสอบอีกรอบ &gt;</button>
+      <img src={logo} alt="logo" className="benlogo"/>
     </div>
   );
 }

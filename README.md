@@ -1,6 +1,8 @@
-# Cozy Cabin Cafe - A personality quiz
-Welcome to the repo for Cozy Cabin Cafe! This project takes users through a 6-question personality quiz, which assigns them a cozy winter drink based on their answers.
+# BenBeyond - A personality quiz
+Welcome to the repo for BenBeyond Quiz! This project takes users through personality quiz, which show which season suits you the best
 ## Try it now!
-<https://korevillo.github.io/cozycabincafe>
-## Attributions
-I drew all the illustrations! Please refrain from using these images without my permission.
+<https://zonezonee.github.io/benbeyond>
+## Credit
+The credit for the sorce code and inspiration will be given to <https://github.com/korevillo>
+## Attribution
+All the images in this website was created by Benbeyond (Benjama council candidate) members. Do not use these images without permission. 

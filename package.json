@@ -1,6 +1,6 @@
 {
-  "name": "cozycabincafe",
-  "homepage": "https://korevillo.github.io/cozycabincafe",
+  "name": "benbeyond",
+  "homepage": "https://Zonezonee.github.io/benbeyond",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0"
+    "gh-pages": "^6.3.0"
   }
 }

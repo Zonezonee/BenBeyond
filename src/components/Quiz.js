@@ -1,174 +1,284 @@
 import React, { useState } from "react";
 import Question from "./Question";
 import Result from "./Result";
+import logo from "../images/logo.png"
 
-import "../styles/next-btn.css"
+import "../styles/quiz.css"
 
-import pumpkinSpiceLatte from '../images/pumpkin-spice-latte.png';
-import goldenMilk from '../images/golden-milk.png';
-import chaiLatte from '../images/chai-latte.png';
-import hotChocolate from '../images/hot-chocolate.png';
-import peppermintMocha from '../images/peppermint-mocha.png';
-import matchaLatte from '../images/matcha-latte.png';
+import Summer from '../images/Summer.png';
+import Winter from '../images/Winter.png';
+import Autumn from '../images/Autumn.png';
+import Spring from '../images/Spring.png';
+import char1 from '../images/1.png';
+import char2 from '../images/2.png';
+import char3 from '../images/3.png';
+import char4 from '../images/4.png';
+import char5 from '../images/5.png';
+import char6 from '../images/6.png';
+import char7 from '../images/7.png';
+import char8 from '../images/8.png';
+import char9 from '../images/9.png';
+import char10 from '../images/10.png';
+import char11 from '../images/11.png';
 
 const questions = [
   {
-    question: "Before you settle in, pick a pastry to enjoy with your drink. It's on the house!",
+    question: "ก่อนสอบคุณมักจะเป็นคนที่",
+    char: char1,
     options: [
-      { text: "A delicate macaron with just the right amount of sweetness.", drink: "Matcha Latte" },
-      { text: "A warm, spiced muffin that feels like a hug in every bite.", drink: "Golden Milk" },
-      { text: "A soft and chewy cookie with chocolate chips throughout.", drink: "Hot Chocolate" }
+      { text: "อ่านมาตลอด วางแผนอย่างดี", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "คอยติวให้เพื่อนในกลุ่ม", score: {"Summer" : 0, "Winter" : 2, "Autumn" : 4, "Spring" : 3} },
+      { text: "ไม่เคยอ่านหนังสือ แต่เดินเข้าสอบอย่างมั่นใจ", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "One night miracle", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} }
     ]
   },
   {
-    question: "As you head toward the seating area, you spot a friend! Who is it?",
+    question: "เวลาทำงานอ่านหนังสือ คุณมักจะชอบบรรยากาศแบบ",
+    char: char2,
     options: [
-      { text: "Blizzard: A playful polar bear who always knows how to cheer you up.", drink: "Peppermint Mocha" },
-      { text: "Maple: A warm-hearted fox who loves reminiscing on cozy winter days.", drink: "Pumpkin Spice Latte" },
-      { text: "Aspen: A curious and adventurous owl with exciting stories to share.", drink: "Chai Latte" }
+      { text: "เงียบสงบ ไร้เสียงรบกวน", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 2} },
+      { text: "เปิดเพลงสนุก ๆ ฟังคลอไปด้วย", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "นั่งทำงานกับเพื่อน มีเสียงพูดคุยรายล้อม", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} },
+      { text: "ตอนที่ฝนตกพรำ หรือที่ที่มีเสียงธรรมชาติ", score: {"Summer" : 0, "Winter" : 2, "Autumn" : 3, "Spring" : 4} }
     ]
   },
   {
-    question: "Your friend hands you a present! You carefully unwrap it and find...",
+    question: "คุณรู้สึกอย่างไรเมื่อต้องย้ายโรงเรียนใหม่",
+    char: char3,
     options: [
-      { text: "A fluffy scarf to keep you cozy in the freezing cold.", drink: "Pumpkin Spice Latte" },
-      { text: "A handmade mug with a charming design, perfect for a sip of something warm.", drink: "Hot Chocolate" },
-      { text: "A shiny snow globe with sparkles to bring the winter cheer.", drink: "Peppermint Mocha" }
+      { text: "ปรับตัวช้า แต่พยายามเข้าใจ", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "ตื่นเต้น ลุยและลองอะไรใหม่ทันที", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} },
+      { text: "ระมัดระวัง และค่อย ๆ ปรับตัว", score: {"Summer" : 0, "Winter" : 3, "Autumn" : 4, "Spring" : 1} },
+      { text: "มองว่าเป็นโอกาสในการทำความรู้จักกับคนใหม่ๆ", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 1, "Spring" : 2} },
     ]
   },
   {
-    question: "Time to find a seat in the cafe! Which do you choose?",
+    question: "เวลาต้องตัดสินใจเรื่องสำคัญ คุณมักจะ…",
+    char: char4,
     options: [
-      { text: "A spot by the fireplace, where the warmth and festive cheer are irresistible.", drink: "Peppermint Mocha" },
-      { text: "A cozy corner with a big, comfy chair and a stack of books for browsing.", drink: "Matcha Latte" },
-      { text: "A window seat, where you can watch the snow fall and dream of new adventures.", drink: "Chai Latte" }
+      { text: "ใช้เวลาไตร่ตรองอย่างรอบคอบ", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "ตัดสินใจเร็วตามความรู้สึก", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} },
+      { text: "รอจนกว่าทุกอย่างจะชัดเจน", score: {"Summer" : 0, "Winter" : 3, "Autumn" : 4, "Spring" : 1} },
+      { text: "ปรึกษาคนรอบข้างก่อนทำ", score: {"Summer" : 4, "Winter" : 1, "Autumn" : 2, "Spring" : 0} }
     ]
   },
   {
-    question: "While you wait, a musician begins to play in the café! What tune fills the air?",
+    question: "ถ้าเพื่อนลืมของสำคัญไว้ในห้องเรียน คุณจะ…",
+    char: char5,
     options: [
-      { text: "A soft melody on an acoustic guitar, soothing and soulful.", drink: "Golden Milk" },
-      { text: "A cheerful piano tune, like the soundtrack to a classic winter movie.", drink: "Hot Chocolate" },
-      { text: "A lively fiddle piece that makes you want to get up and dance!", drink: "Chai Latte" }
+      { text: "เก็บไว้ให้เรียบร้อย แล้วส่งคืนให้", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "แซวขำ ๆ แล้วถ่ายรูปส่งไปแชต", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "รีบวิ่งเอาไปคืนให้ทันที", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} },
+      { text: "ทักบอกในกลุ่ม แล้วรอดูว่ามีใครอยู่แถวนั้นไหม", score: {"Summer" : 0, "Winter" : 2, "Autumn" : 4, "Spring" : 1} }
     ]
   },
   {
-    question: "The scene is set: snacks, music, and cozy vibes. You reach into your bag for a finishing touch. What do you pull out?",
+    question: "เมื่อมีงานที่ต้องส่งด่วน คุณจะ…",
+    char: char6,
     options: [
-      { text: "A well-loved journal, perfect for jotting down your thoughts and dreams.", drink: "Pumpkin Spice Latte" },
-      { text: "A beautifully illustrated book, ready to whisk you away to another world.", drink: "Matcha Latte" },
-      { text: "A soft-knit blanket, perfect for wrapping yourself up in comfort.", drink: "Golden Milk" }
+      { text: "ทำเสร็จตั้งแต่เนิ่น ๆ ไม่รอให้ใกล้เดดไลน์", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "ทำตอนสุดท้ายแต่ยังชิล", score: {"Summer" : 3, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "ลนแต่ก็ยังทำออกมาดี", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "ขอให้เพื่อนช่วยตรวจให้ก่อนส่ง", score: {"Summer" : 0, "Winter" : 2, "Autumn" : 4, "Spring" : 1} }
+    ]
+  },
+  {
+    question: "ถ้ามีเวลาว่างสุดสัปดาห์ คุณมักจะเลือกทำอะไร",
+    char: char7,
+    options: [
+      { text: "อยู่บ้านอ่านหนังสือ ดูซีรีส์ หรือจัดห้องให้เรียบร้อย", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 3, "Spring" : 0} },
+      { text: "นัดเพื่อนไปเที่ยว เดินเล่น หรือคาเฟ่ฮอปปิ้ง", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "ทำกิจกรรมอาสา หรือช่วยเหลือคนรอบตัว", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 4, "Spring" : 1} },
+      { text: "คิดโปรเจ็กต์ใหม่ ๆ หรือลองทำสิ่งที่ไม่เคยทำมาก่อน", score: {"Summer" : 0, "Winter" : 0, "Autumn" : 1, "Spring" : 4} }
+    ]
+  },
+  {
+    question: "เวลามีคนมาขอคำปรึกษา คุณมักจะ…",
+    char: char8,
+    options: [
+      { text: "ฟังอย่างตั้งใจและให้คำแนะนำอย่างนุ่มนวล", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 3, "Spring" : 1} },
+      { text: "พยายามคิดหาเหตุผลและช่วยวางแผนแก้ปัญหาให้", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 2, "Spring" : 0} },
+      { text: "ให้กำลังใจแบบสนุก ๆ หรือชวนไปทำอย่างอื่นให้ลืมเรื่องเครียด", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} },
+      { text: "พูดตรง ๆ แบบไม่อ้อมค้อมแม้อีกฝ่ายอาจจะน้อยใจ", score: {"Summer" : 0, "Winter" : 3, "Autumn" : 1, "Spring" : 0} }
+    ]
+  },
+  {
+    question: "เวลามีคนไม่เห็นด้วยกับความคิดของคุณ คุณมักจะ…",
+    char: char9,
+    options: [
+      { text: "พยายามอธิบายเหตุผลอย่างใจเย็น", score: {"Summer" : 3, "Winter" : 2, "Autumn" : 4, "Spring" : 0} },
+      { text: "ยอมรับความคิดเห็นของอีกฝ่ายอย่างเข้าใจ", score: {"Summer" : 4, "Winter" : 0, "Autumn" : 3, "Spring" : 1} },
+      { text: "เถียงกลับด้วยเหตุผล เพราะอยากให้เข้าใจในมุมของคุณ", score: {"Summer" : 0, "Winter" : 4, "Autumn" : 1, "Spring" : 0} },
+      { text: "ปล่อยผ่าน ไม่ซีเรียส เพราะคิดว่าความคิดต่างก็เป็นเรื่องธรรมดา", score: {"Summer" : 3, "Winter" : 0, "Autumn" : 0, "Spring" : 4} }
+    ]
+  },
+  {
+    question: "เวลาทำงานกลุ่ม คุณมักจะ…",
+    char: char10,
+    options: [
+      { text: "เสนอไอเดียใหม่ สร้างแรงบันดาลใจให้เพื่อน ๆ ", score: {"Summer" : 2, "Winter" : 0, "Autumn" : 1, "Spring" : 5} },
+      { text: "เน้นกระตุ้นให้เพื่อนในกลุ่มลงมือทำ", score: {"Summer" : 5, "Winter" : 0, "Autumn" : 0, "Spring" : 3} },
+      { text: "จัดระบบ แจกจ่ายงานให้ทุกคนอย่างเหมาะสม", score: {"Summer" : 0, "Winter" : 3, "Autumn" : 5, "Spring" : 0} },
+      { text: "คอยฟังความคิดเห็นทุกคน เพื่อลดความขัดแย้ง", score: {"Summer" : 0, "Winter" : 5, "Autumn" : 2, "Spring" : 0} }
+    ]
+  },
+  {
+    question: "ถ้าเพื่อนกำลังท้อแท้ คุณมักจะ…",
+    char: char11,
+    options: [
+      { text: "ให้กำลังใจด้วยคำพูดดี ๆ หรือชวนทำสิ่งที่สนุก", score: {"Summer" : 2, "Winter" : 0, "Autumn" : 1, "Spring" : 5} },
+      { text: "ดึงเพื่อนออกจากความเศร้า ชวนให้เพื่อนฮึดสู้อีกครั้ง", score: {"Summer" : 5, "Winter" : 0, "Autumn" : 1, "Spring" : 3} },
+      { text: "อยู่ข้าง ๆ อย่างเงียบ ๆ คอยช่วยเรื่องเล็กน้อย", score: {"Summer" : 0, "Winter" : 3, "Autumn" : 5, "Spring" : 0} },
+      { text: "ฟังอย่างเข้าใจ และให้คำปรึกษาอย่างใจเย็น", score: {"Summer" : 0, "Winter" : 5, "Autumn" : 2, "Spring" : 0} }
     ]
   },
 ];
 
-const drinks = {
-  "Pumpkin Spice Latte": { 
-    image: pumpkinSpiceLatte, 
-    compatible: "Golden Milk", 
-    description: "You are cozy, warm, and delightfully nostalgic. You cherish traditions and the little things that make life sweet, like the scent of cinnamon and crisp autumn air. Your approachable, down-to-earth nature makes you the perfect companion for those cozy afternoons and good times with friends!" 
+const seasons = {
+  "Summer": { 
+    image: Summer
   },
-  "Golden Milk": { 
-    image: goldenMilk, 
-    compatible: "Pumpkin Spice Latte", 
-    description: "You are radiant, kind-hearted, and full of positive energy. You love creating warmth and comfort for others, always offering care and wisdom. Your nurturing spirit lights up any room, and your joyful outlook spreads peace and happiness wherever you go!" 
+  "Winter": { 
+    image: Winter
   },
-  "Chai Latte": { 
-    image: chaiLatte, 
-    compatible: "Matcha Latte", 
-    description: "You are vibrant, adventurous, and always ready for a good time! You dive into life with energy and enthusiasm, seeking out new challenges and flavors to experience. Your curiosity makes every day an adventure, and you're always ready to tackle what comes next!" 
+  "Autumn": { 
+    image: Autumn
   },
-  "Hot Chocolate": { 
-    image: hotChocolate, 
-    compatible: "Peppermint Mocha", 
-    description: "You are sweet, comforting, and a dependable friend. You find joy in simple pleasures, like sharing cozy moments and making everyone feel appreciated. You're the heart of any gathering, and you make people smile wherever you go!" 
+  "Spring": { 
+    image: Spring
   },
-  "Peppermint Mocha": { 
-    image: peppermintMocha, 
-    compatible: "Hot Chocolate", 
-    description: "You are lively, energetic, and ready to make every moment unforgettable! You thrive in the hustle and bustle of the season, bringing excitement and cheer wherever you are. With your perfect mix of fun and warmth, you're the life of the party!" 
-  },
-  "Matcha Latte": { 
-    image: matchaLatte, 
-    compatible: "Chai Latte", 
-    description: "You are serene, thoughtful, and have a natural calmness that others admire. You embrace the beauty in life's quiet moments and enjoy reflecting on what truly matters. Your personality radiates creativity and balance, making every day feel just a little brighter and more meaningful." 
-  }
 };
 
-function Quiz() {
+function Quiz({backToStart}) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null); // Track the selected answer
-  const [scores, setScores] = useState({});
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null)); // per-question answers
+
+  const [scores, setScores] = useState({
+    Summer: 0,
+    Winter: 0,
+    Autumn: 0,
+    Spring: 0,
+  });
   const [result, setResult] = useState(null);
 
-  function handleAnswer(drink) {
+  function handleClick(ans) {
+    // Update scores: remove previous answer for this question (if any), then add new one
     setScores((prevScores) => {
-      const newScores = { ...prevScores };
-  
-      // Decrease the score for the previously selected drink
-      if (selectedAnswer) {
-        newScores[selectedAnswer] -= 1;
+      const newScores = {...prevScores};
+      const prevAns = selectedAnswers[currentQuestion];
+      if (prevAns) {
+        newScores["Summer"] -= prevAns.Summer || 0;
+        newScores["Winter"] -= prevAns.Winter || 0;
+        newScores["Autumn"] -= prevAns.Autumn || 0;
+        newScores["Spring"] -= prevAns.Spring || 0;
       }
-  
-      // Increase the score for the newly selected drink
-      newScores[drink] = (newScores[drink] || 0) + 1;
-  
+      newScores["Summer"] += ans.Summer || 0;
+      newScores["Winter"] += ans.Winter || 0;
+      newScores["Autumn"] += ans.Autumn || 0;
+      newScores["Spring"] += ans.Spring || 0;
       return newScores;
     });
-  
-    setSelectedAnswer(drink); // Mark the new answer as selected
+
+    // Save this answer for the current question
+    setSelectedAnswers((prev) => {
+      const arr = [...prev];
+      arr[currentQuestion] = ans;
+      return arr;
+    });
+
+    setSelectedAnswer(ans); // Mark the new answer as selected (for UI)
   }
-  
 
   function handleNextQuestion() {
     if (currentQuestion + 1 < questions.length) {
+      const nextIndex = currentQuestion + 1;
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedAnswer(null); // Reset selected answer for the next question
+      setSelectedAnswer(selectedAnswers[nextIndex] || null); // Reset selected answer for the next question
     } else {
       calculateResult();
     }
   }
 
   function calculateResult() {
-    let maxDrink = null;
+    let maxSeason = null;
     let maxScore = 0;
 
-    for (const [drink, score] of Object.entries(scores)) {
+    for (const [season, score] of Object.entries(scores)) {
       if (score > maxScore) {
-        maxDrink = drink;
+        maxSeason = season;
         maxScore = score;
       }
     }
 
-    setResult(maxDrink);
+    setResult(maxSeason);
   }
 
   function restartQuiz() {
     setCurrentQuestion(0);
-    setScores({});
+    setSelectedAnswers(Array(questions.length).fill(null));
+    setScores({
+    Summer: 0,
+    Winter: 0,
+    Autumn: 0,
+    Spring: 0,
+  });
+    setSelectedAnswer(null);
     setResult(null);
   }
 
+  function handleBackButton() {
+    if (currentQuestion > 0) {
+      // If there is an answer selected for the current question, remove its score (user wants to "undo" it)
+      const currIndex = currentQuestion;
+      const currAns = selectedAnswers[currIndex];
+
+      if (currAns) {
+        setScores((prevScores) => {
+          const newScores = {...prevScores};
+          newScores["Summer"] -= currAns.Summer || 0;
+          newScores["Winter"] -= currAns.Winter || 0;
+          newScores["Autumn"] -= currAns.Autumn || 0;
+          newScores["Spring"] -= currAns.Spring || 0;
+          return newScores;
+        });
+
+        setSelectedAnswers((prev) => {
+          const arr = [...prev];
+          arr[currIndex] = null;
+          return arr;
+        });
+      }
+
+      const prevIndex = currentQuestion - 1;
+      setCurrentQuestion(prevIndex);
+      setSelectedAnswer(selectedAnswers[prevIndex] || null);
+    } else {
+      backToStart();
+    }
+  }
+
   if (result) {
-    const compatible = drinks[result].compatible;
     return (
       <Result
-        drink={result}
-        compatible={compatible}
-        description={drinks[result].description}
-        drinkImage={drinks[result].image}
-        compatibleImage={drinks[compatible].image}
+        season={result}
+        description={seasons[result].description}
+        seasonImage={seasons[result].image}
         restartQuiz={restartQuiz}
       />
     );
   }
-
+  console.log(scores);
   return (
     <div className="quiz-container-with-next">
+      <button className="back-btn" onClick={handleBackButton}>
+        &lt; ย้อนกลับ
+      </button>
       <Question
         question={questions[currentQuestion].question}
         options={questions[currentQuestion].options}
-        onAnswer={handleAnswer}
+        char={questions[currentQuestion].char}
+        onAnswer={handleClick}
         selectedAnswer={selectedAnswer}
       />
 
@@ -176,8 +286,9 @@ function Quiz() {
         onClick={handleNextQuestion}
         disabled={!selectedAnswer} // Disable the button until an answer is selected
       >
-        Next &gt;
+        ต่อไป &gt;
       </button>
+      <a href="https://instagram.com/benbeyond_/"><img src={logo} alt="Benbeyond" className="logo"/></a>
     </div>
 );
 }
